@@ -1,0 +1,424 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #07090e;
+  --panel: #0e121b;
+  --blue: #56aaff;
+  --white: #f4f7ff;
+  --muted: #8d96aa;
+  --line: rgba(255,255,255,.10);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Inter, Arial, sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.nav {
+  height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  background: rgba(7,9,14,.94);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(18px);
+}
+
+.logo {
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+.logo span, h1 span, h2 span { color: var(--blue); }
+
+nav { display: flex; gap: 30px; }
+nav a { color: #aeb7c8; font-size: 13px; }
+nav a:hover { color: white; }
+
+.menu-btn {
+  display: none;
+  color: white;
+  background: none;
+  border: 0;
+  font-size: 25px;
+}
+
+.hero {
+  min-height: 740px;
+  padding: 110px 8% 25px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 78% 48%, rgba(22,99,205,.18), transparent 43%),
+    linear-gradient(145deg, #080a10, #090d17 65%, #07090e);
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #65d8a1;
+  margin-right: 8px;
+  box-shadow: 0 0 12px #65d8a1;
+}
+
+h1 {
+  font-size: clamp(38px, 6.3vw, 78px);
+  letter-spacing: -3px;
+  line-height: 1.06;
+  font-weight: 800;
+  margin: 30px 0 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.intro, .section-copy {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+  max-width: 430px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 3;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 19px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 3px;
+  transition: transform .2s, background .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.primary {
+  background: var(--blue);
+  color: #06101e;
+}
+.primary:hover { background: #8cc7ff; }
+.secondary { border: 1px solid #343b4a; }
+
+.device-scene {
+  position: absolute;
+  width: 42%;
+  height: 460px;
+  right: 4%;
+  top: 145px;
+  display: grid;
+  place-items: center;
+}
+
+.phone {
+  width: 190px;
+  height: 365px;
+  padding: 7px;
+  border-radius: 32px;
+  background: linear-gradient(125deg, #e1e6f0, #333b4b 25%, #090b11 50%, #818da0 80%, #171c26);
+  transform: rotate(9deg);
+  box-shadow: 20px 30px 90px #000, 0 0 65px #1675e033;
+  z-index: 2;
+  position: relative;
+}
+
+.phone-screen {
+  height: 100%;
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 50% 55%, #123d78, transparent 43%),
+    linear-gradient(150deg, #111c33, #05070d 70%);
+  border: 1px solid #ffffff26;
+  padding: 22px 14px;
+}
+
+.phone-camera {
+  position: absolute;
+  z-index: 3;
+  width: 45px;
+  height: 9px;
+  border-radius: 10px;
+  background: #020308;
+  top: 16px;
+  left: calc(50% - 22px);
+}
+
+.screen-brand {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 900;
+  margin-top: 15px;
+  letter-spacing: 2px;
+}
+.screen-brand span { color: var(--blue); }
+
+.screen-glow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: 70px;
+  left: -25px;
+  border-radius: 50%;
+  background: #1489ff;
+  filter: blur(75px);
+  opacity: .5;
+}
+
+.screen-x {
+  position: absolute;
+  top: 115px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-size: 110px;
+  font-weight: 900;
+  letter-spacing: -9px;
+  color: #ffffffd9;
+}
+
+.screen-caption {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid #418eff20;
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  transform: rotate(-25deg) scaleY(.5);
+}
+.orbit-two {
+  width: 460px;
+  height: 460px;
+  border-color: #418eff15;
+}
+
+.float-label {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--blue);
+}
+.float-line {
+  position: absolute;
+  right: 0;
+  bottom: 52px;
+  width: 100px;
+  height: 1px;
+  background: var(--blue);
+}
+
+.hero-bottom {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  color: #697388;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.section { padding: 100px 8%; }
+.vision {
+  border-top: 1px solid var(--line);
+  background: linear-gradient(120deg, #0c1019, #090b11);
+}
+h2 {
+  font-size: clamp(34px, 5vw, 58px);
+  letter-spacing: -2px;
+  line-height: 1.15;
+  margin: 25px 0;
+}
+.section-copy { max-width: 580px; }
+
+.products { background: #07090e; }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 45px;
+}
+.product-card {
+  min-width: 0;
+  background: linear-gradient(145deg, #121925, #0b0e15);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 5px;
+  transition: border-color .2s, transform .2s;
+}
+.product-card:hover {
+  border-color: #398de8;
+  transform: translateY(-3px);
+}
+.product-number, .status {
+  color: var(--blue);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+.product-card h3 { font-size: 21px; margin: 15px 0 8px; }
+.product-card p { font-size: 12px; color: var(--muted); line-height: 1.8; }
+.status { display: inline-block; margin-top: 12px; color: #8798b4; }
+
+.product-art {
+  height: 175px;
+  margin: 25px 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse, #16407845, transparent 70%);
+}
+.mini-phone {
+  width: 85px;
+  height: 155px;
+  border-radius: 17px;
+  border: 3px solid #77869b;
+  background: radial-gradient(circle at 50% 50%, #146ac8, #080d19 65%);
+  box-shadow: 0 0 45px #147aff25;
+  transform: rotate(-8deg);
+}
+.laptop-art div {
+  width: 160px;
+  height: 95px;
+  border: 3px solid #9caabd;
+  border-radius: 5px;
+  background: linear-gradient(140deg, #132b4a, #05080d);
+  box-shadow: 0 12px 0 -5px #65748a, 0 0 35px #168aff25;
+}
+.gaming-art {
+  font-size: 110px;
+  font-weight: 900;
+  color: var(--blue);
+  text-shadow: 0 0 45px #168aff90;
+}
+.ai-art span {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  color: #a6d6ff;
+  text-shadow: 0 0 40px #168aff;
+}
+
+.manifesto {
+  text-align: center;
+  background: radial-gradient(ellipse at center, #12305a40, transparent 65%);
+}
+.manifesto-mark {
+  font-size: 105px;
+  font-weight: 900;
+  color: #5baaff;
+  text-shadow: 0 0 65px #168aff70;
+  margin-top: 30px;
+}
+.manifesto p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 25px auto 30px;
+  max-width: 450px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 35px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+footer p, footer small {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 1100px) {
+  .hero { padding-left: 12%; }
+  .device-scene { right: 10%; }
+}
+
+@media (max-width: 700px) {
+  .nav { height: 65px; padding: 0 6%; }
+  .menu-btn { display: block; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    padding: 22px 6%;
+    flex-direction: column;
+    gap: 22px;
+    background: #0b0e15;
+    border-bottom: 1px solid var(--line);
+  }
+  nav.open { display: flex; }
+  .hero { min-height: 880px; padding: 65px 6% 55px; }
+  h1 { font-size: clamp(35px, 9vw, 56px); letter-spacing: -2px; }
+  .device-scene {
+    top: 415px;
+    right: 0;
+    width: 100%;
+    height: 365px;
+  }
+  .phone { width: 155px; height: 295px; }
+  .screen-x { font-size: 85px; top: 90px; }
+  .screen-glow { width: 170px; height: 170px; }
+  .screen-caption { bottom: 25px; }
+  .float-label { right: 5%; bottom: 0; }
+  .float-line { right: 5%; bottom: 22px; }
+  .hero-bottom { left: 6%; right: 6%; font-size: 7px; }
+  .section { padding: 75px 6%; }
+  .product-grid { grid-template-columns: 1fr; }
+  .product-card { padding: 20px; }
+  .product-art { height: 145px; }
+  footer { padding: 30px 6%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
